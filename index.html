@@ -3,133 +3,301 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>$10K Shift in One Day</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Daniel's Music</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .gate,
+      .exclusive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .gate {
+        height: 100vh;
+        background-color: #0d0d0d;
+        color: white;
+        padding: 2rem;
+      }
+
+      .gate input,
+      .gate button {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: none;
+      }
+
+      .gate input {
+        width: 250px;
+        max-width: 80%;
+      }
+
+      .gate button {
+        background-color: #e50914;
+        color: white;
+        cursor: pointer;
+      }
+
+      #content {
+        display: none;
+      }
+
+      .quiz {
+        background: #111;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 600px;
+        color: white;
+        border-radius: 8px;
+      }
+
+      .quiz h2 {
+        margin-bottom: 1rem;
+      }
+
+      .quiz label {
+        display: block;
+        margin: 1rem 0 0.5rem;
+        font-weight: bold;
+      }
+
+      .quiz input[type="text"] {
+        width: 100%;
+        padding: 0.6rem;
+        border-radius: 4px;
+        border: none;
+        font-size: 1rem;
+      }
+
+      .quiz .choices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .quiz .choices button {
+        padding: 0.6rem;
+        font-size: 1rem;
+        background-color: #333;
+        color: white;
+        border: 1px solid #555;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .quiz .choices button.selected {
+        background-color: #e50914;
+        border-color: #e50914;
+      }
+
+      .exclusive {
+        display: none;
+        background-color: #111;
+        padding: 3rem 2rem;
+        margin-top: 2rem;
+        color: #f0f0f0;
+      }
+
+      .exclusive iframe {
+        margin-top: 1rem;
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+        border: none;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>$10K Shift in One Day</h1>
-      <p>Body, Energy & Business Alchemy in 24 Hours</p>
-      <a href="#apply" class="cta-button">Book Your Breakthrough</a>
-    </header>
+    <!-- GATE -->
+    <div id="gate" class="gate">
+      <h2>
+        🎧 Type in your email to get access to Daniel's exclusive songs and
+        content
+      </h2>
+      <form id="gateForm">
+        <input
+          type="email"
+          id="gateEmail"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit">Unlock Access</button>
+      </form>
+    </div>
 
-    <section id="about">
-      <h2>What This Is</h2>
-      <p>
-        This is a day designed for bold entrepreneurs and creatives ready for
-        massive energetic and financial breakthroughs. We combine deep bodywork,
-        energy realignment, and high-impact AI-driven web design to unlock your
-        next $10K (or more).
-      </p>
-    </section>
+    <!-- CONTENT -->
+    <div id="content">
+      <header>
+        <img src="daniel.png" alt="Daniel" class="profile-pic" />
+        <h1>Daniel's Music</h1>
+      </header>
 
-    <section id="experience">
-      <h2>The Experience</h2>
-      <div class="timeline">
-        <div>
-          <h3>Morning: Align</h3>
-          <p>
-            Start with grounding, somatic release, breathwork, and energy
-            recalibration. Clear what's in the way.
-          </p>
+      <section class="videos">
+        <div class="video">
+          <h3>Memory With You</h3>
+          <iframe
+            src="https://www.youtube.com/embed/mobKhvj5XZw"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div>
-          <h3>Midday: Create</h3>
-          <p>
-            We design your offer, landing page, or automation system using
-            cutting-edge AI tools. Live, with you.
-          </p>
+        <div class="video">
+          <h3>Heart Break Melody</h3>
+          <iframe
+            src="https://www.youtube.com/embed/xAiy1Klg1wQ"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div>
-          <h3>Afternoon: Activate</h3>
-          <p>
-            Integrate the shifts with personalized rituals or practice. Leave
-            with a plan, assets, and embodied clarity.
-          </p>
+        <div class="video">
+          <h3>Once in a Moon</h3>
+          <iframe
+            src="https://www.youtube.com/embed/_jE3lvH1Nro"
+            allowfullscreen
+          ></iframe>
         </div>
+        <div class="video">
+          <h3>Escape Artist</h3>
+          <iframe
+            src="https://www.youtube.com/embed/8zxefVap0iM"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- QUIZ SECTION -->
+      <section class="quiz" id="quizSection">
+        <h2>🧠 Quiz to Unlock the Secret Track</h2>
+
+        <label for="q1"
+          >1. What city does Daniel say he loves in "A Memory With You"?</label
+        >
+        <input type="text" id="q1" />
+
+        <label for="q2"
+          >2. Finish the sentence: "And all I have learned, has come back
+          to:"</label
+        >
+        <input type="text" id="q2" />
+
+        <label for="q3"
+          >3. I hear this sound, calling me now, _______ And _______
+          Lalalala</label
+        >
+        <input type="text" id="q3" />
+
+        <label>4. He gets what he can take but it will never be:</label>
+        <div class="choices" id="q4">
+          <button data-answer="Meatballs">Meatballs</button>
+          <button data-answer="Enough">Enough</button>
+          <button data-answer="Cherry on top">Cherry on top</button>
+          <button data-answer="The way he wants">The way he wants</button>
+        </div>
+
+        <button id="submitQuiz" style="margin-top: 2rem">Submit Answers</button>
+        <p
+          id="quizFeedback"
+          style="color: #f66; font-weight: bold; margin-top: 1rem"
+        ></p>
+      </section>
+
+      <!-- SECRET UNLOCK -->
+      <div id="exclusiveTrack" class="exclusive">
+        <h2>🔥 You unlocked Daniel's secret song!</h2>
+        <p>This unreleased track is only for true fans 🎧</p>
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_SECRET_VIDEO_ID"
+          allowfullscreen
+        ></iframe>
       </div>
-    </section>
 
-    <section id="testimonials">
-      <h2>Client Results</h2>
-      <blockquote>
-        "In just one day, I felt 10x more aligned AND launched a whole new offer
-        that brought in $12K in a week." – J.M.
-      </blockquote>
-      <blockquote>
-        "The bodywork and biz design combo was unreal. I’ve never moved this
-        fast from soul to structure." – L.A.
-      </blockquote>
-    </section>
-
-    <section id="apply">
-      <h2>Book Your Breakthrough</h2>
-      <p>This is for the bold. Fill out a few questions so we can align.</p>
-      <a href="https://calendly.com/your-link" class="cta-button">Apply Now</a>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Your Name | One-Day Shifts for Soul-Led Entrepreneurs</p>
-    </footer>
+      <footer>&copy; 2025 Daniel. All rights reserved.</footer>
+    </div>
 
     <script>
-      // Smooth fade-in on scroll
-      const sections = document.querySelectorAll("section");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = "translateY(0)";
+      document.addEventListener("DOMContentLoaded", () => {
+        const gate = document.getElementById("gate");
+        const content = document.getElementById("content");
+        const quiz = document.getElementById("quizSection");
+        const exclusive = document.getElementById("exclusiveTrack");
+        const feedback = document.getElementById("quizFeedback");
+        let selectedQ4 = "";
+
+        // Email gate
+        if (localStorage.getItem("email_submitted") === "true") {
+          gate.style.display = "none";
+          content.style.display = "block";
+        }
+
+        document
+          .getElementById("gateForm")
+          .addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("gateEmail").value;
+            if (!email.trim()) return alert("Please enter a valid email.");
+            try {
+              await fetch("https://formspree.io/f/mbloyeno", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify({ email }),
+              });
+
+              localStorage.setItem("email_submitted", "true");
+              gate.style.display = "none";
+              content.style.display = "block";
+            } catch (error) {
+              alert("Something went wrong.");
             }
           });
-        },
-        { threshold: 0.1 }
-      );
 
-      sections.forEach((section) => {
-        section.style.opacity = 0;
-        section.style.transform = "translateY(50px)";
-        section.style.transition = "all 1s ease-out";
-        observer.observe(section);
-      });
-
-      // Floating oracle bubble
-      const oracleMessages = [
-        "You are the frequency of expansion.",
-        "Your body already knows the way.",
-        "Abundance isn't a goal. It's a state.",
-        "Your next $10K is already vibrating toward you.",
-      ];
-
-      const oracle = document.createElement("div");
-      oracle.innerText = "✨";
-      oracle.style.position = "fixed";
-      oracle.style.bottom = "2rem";
-      oracle.style.right = "2rem";
-      oracle.style.fontSize = "2rem";
-      oracle.style.cursor = "pointer";
-      oracle.title = "Tap for a message";
-      oracle.style.zIndex = "1000";
-      document.body.appendChild(oracle);
-
-      oracle.addEventListener("click", () => {
-        const message =
-          oracleMessages[Math.floor(Math.random() * oracleMessages.length)];
-        alert(message);
-      });
-
-      // Animate CTA on hover
-      const ctas = document.querySelectorAll(".cta-button");
-      ctas.forEach((btn) => {
-        btn.addEventListener("mouseenter", () => {
-          btn.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.6)";
-          btn.style.transform = "scale(1.05)";
+        // Multiple choice selection
+        document.querySelectorAll("#q4 button").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            selectedQ4 = btn.dataset.answer;
+            document
+              .querySelectorAll("#q4 button")
+              .forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+          });
         });
-        btn.addEventListener("mouseleave", () => {
-          btn.style.boxShadow = "none";
-          btn.style.transform = "scale(1)";
+
+        // Quiz submission logic
+        document.getElementById("submitQuiz").addEventListener("click", () => {
+          const q1 = document.getElementById("q1").value.trim().toLowerCase();
+          const q2 = document.getElementById("q2").value.trim().toLowerCase();
+          const q3 = document.getElementById("q3").value.trim().toLowerCase();
+          const correctQ3 = ["laughing and racing", "laughing racing"];
+          const correctQ4 = "Enough";
+
+          if (
+            q1 === "spokane" &&
+            q2 === "burn" &&
+            correctQ3.includes(q3) &&
+            selectedQ4 === correctQ4
+          ) {
+            exclusive.style.display = "flex";
+            quiz.style.display = "none";
+            feedback.textContent = "";
+            localStorage.setItem("quiz_passed", "true");
+          } else {
+            feedback.textContent =
+              "❌ One or more answers are incorrect. Try again!";
+          }
         });
+
+        // Restore if already passed
+        if (localStorage.getItem("quiz_passed") === "true") {
+          document.getElementById("quizSection").style.display = "none";
+          document.getElementById("exclusiveTrack").style.display = "flex";
+        }
       });
     </script>
   </body>
