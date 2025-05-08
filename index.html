@@ -6,16 +6,12 @@
     <title>Daniel's Music</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .gate,
-      .exclusive {
+      .gate {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-      }
-
-      .gate {
         height: 100vh;
         background-color: #0d0d0d;
         color: white;
@@ -55,10 +51,6 @@
         border-radius: 8px;
       }
 
-      .quiz h2 {
-        margin-bottom: 1rem;
-      }
-
       .quiz label {
         display: block;
         margin: 1rem 0 0.5rem;
@@ -73,14 +65,14 @@
         font-size: 1rem;
       }
 
-      .quiz .choices {
+      .choices {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
         margin-top: 0.5rem;
       }
 
-      .quiz .choices button {
+      .choices button {
         padding: 0.6rem;
         font-size: 1rem;
         background-color: #333;
@@ -90,13 +82,13 @@
         cursor: pointer;
       }
 
-      .quiz .choices button.selected {
+      .choices button.selected {
         background-color: #e50914;
         border-color: #e50914;
       }
 
       #exclusiveTrack {
-        display: none !important;
+        display: none;
         background-color: #111;
         padding: 3rem 2rem;
         margin-top: 2rem;
@@ -173,7 +165,7 @@
         </div>
       </section>
 
-      <!-- QUIZ SECTION -->
+      <!-- QUIZ -->
       <section class="quiz" id="quizSection">
         <h2>🧠 Quiz to Unlock the Secret Track</h2>
 
@@ -261,7 +253,7 @@
             }
           });
 
-        // Multiple choice selection
+        // Multiple choice logic
         document.querySelectorAll("#q4 button").forEach((btn) => {
           btn.addEventListener("click", () => {
             selectedQ4 = btn.dataset.answer;
@@ -272,7 +264,7 @@
           });
         });
 
-        // Quiz submission logic
+        // Quiz check
         document.getElementById("submitQuiz").addEventListener("click", () => {
           const q1 = document.getElementById("q1").value.trim().toLowerCase();
           const q2 = document.getElementById("q2").value.trim().toLowerCase();
@@ -296,7 +288,7 @@
           }
         });
 
-        // Restore if already passed
+        // If already passed
         if (localStorage.getItem("quiz_passed") === "true") {
           document.getElementById("quizSection").style.display = "none";
           document.getElementById("exclusiveTrack").style.display = "flex";
